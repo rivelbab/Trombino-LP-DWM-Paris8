@@ -1,5 +1,27 @@
+.wrapper{
+    display: block;
+    width: 75%;
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+}
+
+ul{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: auto;
+}
+
 li{
     display: inline-block;
     width: 150px;
-    border: 2px solid red;
+    height: 150px;
+    border: 2px solid grey;
+    margin: 1%;
+}
+
+img{
+    width: 100%;
 }
