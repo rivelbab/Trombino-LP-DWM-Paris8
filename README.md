@@ -1,2 +1,2 @@
-# Trembino-LP-DWM-Paris8
-my LP trembinoscope, Flikr API
+# Trombino-LP-DWM-Paris8
+my LP trombinoscope, Flikr API
