@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Trembino LP DWM</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="author" content="Rivel Babindamana">
+
+    <link rel="stylesheet" href="css/master.css" media="screen,projection">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/master.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="images"></div>
+
+    <script>
+        //merci beaucoup à https://etienner.fr/flickr-json
+        //$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=clef-API&photoset_id=le_photoset&extras=original_format&format=json&jsoncallback=?",
+        $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157686701939221&extras=original_format&format=json&jsoncallback=?",
+            function(data) {
+                // Debut de la boucle
+                var numTof = 1;
+                $.each(data.photoset.photo, function(i, item) {
+                    // Sockage de l'image dans une variable
+                    var photo = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_s.jpg';
+                    // Sockage de l'url dans une variable
+                    var url = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_c.jpg';
+                    // Affichage des images dans la balise ul#images avec le l'url dans la balise li
+                    $("<img/>").attr({src: photo, alt: item.title}).appendTo("#images").wrap("<li><a href=' "+ url +"' title=' "+ item.title +" ' ></a></li>");
+
+                }); //Fin de la boucle
+
+            });
+        // Fin appel JSON
+    </script>
+</body>
+
+</html>

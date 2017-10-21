@@ -1,0 +1,5 @@
+li{
+    display: inline-block;
+    width: 150px;
+    border: 2px solid red;
+}
