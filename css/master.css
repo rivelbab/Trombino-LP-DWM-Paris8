@@ -1,10 +1,12 @@
+body{
+    background: url(bg.png);
+}
 h1{
     border-top: 1px solid lightblue;
     border-bottom: 1px solid lightblue;
     padding: 2%;
     color: lightblue;
 }
-
 h3{
     margin-bottom: 2%;
 }
