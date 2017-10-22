@@ -9,6 +9,7 @@
     <meta name="author" content="Rivel Babindamana">
 
     <link rel="stylesheet" href="css/master.css" media="screen,projection">
+    <link rel="stylesheet" href="css/hover-min.css" media="screen,projection">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/master.js" charset="utf-8"></script>
 </head>
@@ -24,22 +25,26 @@
         <script>
             //merci beaucoup à https://etienner.fr/flickr-json
 
+            //on recupere les photos depuis flickr
             $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=79672885f8a018343cd8849f57e8a50a&photoset_id=72157686701939221&extras=original_format&format=json&jsoncallback=?",
                 function(data) {
-                    // Debut de la boucle
+                    // On parcours toutes les photos tout en les stockant dans une variable
                     var numTof = 1;
                     $.each(data.photoset.photo, function(i, item) {
                         // Sockage de l'image dans une variable
                         var photo = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_s.jpg';
                         // Sockage de l'url dans une variable
                         var url = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_c.jpg';
-                        // Affichage des images dans la balise ul#images avec le l'url dans la balise li
-                        $("<img/>").attr({src: photo, alt: item.title}).appendTo("#images").wrap("<ul><li><a href=' "+ url +"' title=' "+ item.title +" ' ></a></li></ul>");
+                        // Affichage des images dans la balise ul#images avec l'url dans la balise li
+                        // on donne un peu de class pour permettre le hover et les bordures
+                        $("<img/>").attr({src: photo, alt: item.title, class: ""}).appendTo("#images").wrap("<ul><li class='hvr-curl-top-right hvr-bounce-in'><a href=' "+ url +" ' ></a></li></ul>");
 
-                    }); //Fin de la boucle
+                    });
                 });
             // Fin appel JSON
         </script>
+        <br><br>
+        <p>Copyright &copy; rivel babindamana</p>
     </div>
 </body>
 
