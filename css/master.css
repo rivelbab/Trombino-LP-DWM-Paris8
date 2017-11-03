@@ -1,7 +1,7 @@
 body{
     background: url(bg.png);
 }
-h1{
+h2{
     border-top: 1px solid lightblue;
     border-bottom: 1px solid lightblue;
     padding: 2%;
@@ -18,25 +18,9 @@ h3{
     text-align: center;
 }
 
-ul{
-    display: inline-block;
-    width: auto;
-    height: auto;
-    margin: auto;
-    padding: auto;
-}
-
-li{
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    border: 2px solid grey;
-    margin: 0.7%;
-}
-img{
+img-size{
     width: 100%;
-    border: 0;
     max-width: 100% !important;
     vertical-align: middle;
-    height: auto;
+    height: 50px;
 }
